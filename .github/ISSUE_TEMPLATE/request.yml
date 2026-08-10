@@ -1,0 +1,36 @@
+name: 작업 요청
+description: 웹사이트 변경이나 운영 작업을 요청합니다.
+title: ""
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: 카테고리
+      description: 생성 후 에이전트가 대응하는 type 라벨을 적용합니다.
+      options:
+        - 오류 (type:bug)
+        - 콘텐츠 (type:content)
+        - 디자인 (type:design)
+        - 기능 (type:feature)
+        - 운영 (type:ops)
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: 요청 내용
+      description: 무엇을 변경해야 하는지 적어 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 완료 조건
+      description: 검수할 수 있는 구체적인 기준을 적어 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: 참고 자료
+      description: 이미지, 문서 또는 참고 링크가 있으면 남겨 주세요.
