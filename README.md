@@ -4,7 +4,8 @@ LK BIO 회사 소개 웹사이트의 소스 저장소입니다.
 
 ## 운영 링크
 
-- 운영 사이트: <https://lkbio-website.pages.dev>
+- 운영 사이트: <https://lkbio.net>
+- Cloudflare 기본 주소: <https://lkbio-website.pages.dev>
 - 검수 사이트: <https://dev.lkbio-website.pages.dev>
 - Cloudflare Pages 관리: <https://dash.cloudflare.com/7c37e3b0bb474417fc8124fc61cdbbbf/pages/view/lkbio-website>
 - GitHub Issues: <https://github.com/lkbio-company/lkbio-website/issues>
