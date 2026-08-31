@@ -36,10 +36,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-
-      - name: Install monitor dependencies
-        run: npm ci --ignore-scripts --no-audit --no-fund --prefer-offline
 
       - name: Locate Chrome
         id: chrome
@@ -57,7 +53,7 @@ jobs:
         continue-on-error: true
         env:
           CHROME_PATH: ${{ steps.chrome.outputs.path }}
-        run: npm run monitor:production
+        run: node .github/scripts/check-production.mjs
 
       - name: Upload failure evidence
         if: steps.monitor.outcome == 'failure'
