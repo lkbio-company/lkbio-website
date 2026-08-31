@@ -1,0 +1,10 @@
+{
+  "name": "lkbio-website",
+  "private": true,
+  "scripts": {
+    "monitor:production": "node .github/scripts/check-production.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.62.1"
+  }
+}
