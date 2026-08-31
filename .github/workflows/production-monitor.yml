@@ -39,7 +39,7 @@ jobs:
           cache: npm
 
       - name: Install monitor dependencies
-        run: npm ci
+        run: npm ci --ignore-scripts --no-audit --no-fund --prefer-offline
 
       - name: Locate Chrome
         id: chrome
