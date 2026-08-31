@@ -27,3 +27,11 @@ LK BIO 회사 소개 웹사이트의 소스 저장소입니다.
 Cloudflare Pages 설정은 Production branch를 `main`, Preview branch를 `dev`로 제한합니다. Preview 배포에는 검색엔진 색인을 막는 `X-Robots-Tag: noindex`가 기본 적용됩니다.
 
 이전 직접 업로드 테스트 주소 `lkbio-ddg.pages.dev`는 신규 운영 주소 확인이 끝날 때까지만 유지합니다.
+
+## 운영 사이트 자동 점검
+
+GitHub Actions의 `Production website monitor` 워크플로가 매시 17분에 실제 Chrome으로 운영 사이트를 확인합니다. HTTP 200 응답, 페이지 제목과 핵심 콘텐츠 렌더링, 로고 이미지 로딩, Cloudflare 장애 문구 노출 여부를 최대 3회 점검합니다.
+
+3회 모두 실패하면 `bug`, `type:ops`, `troubleshooting` 라벨이 붙은 장애 이슈를 중복 없이 만들고 `@wonjerry`를 호출합니다. 실패 화면과 진단 JSON은 해당 Actions 실행의 artifact에서 14일간 확인할 수 있습니다. 이후 점검이 성공하면 자동으로 복구 댓글을 남기고 장애 이슈를 닫습니다.
+
+필요할 때는 GitHub의 **Actions → Production website monitor → Run workflow**에서 수동으로 실행할 수 있습니다.
